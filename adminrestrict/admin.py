@@ -11,9 +11,7 @@ from adminrestrict.models import AllowedIP
 
 
 class AllowedIPAdmin(admin.ModelAdmin):
-    list_display = ('id', 'ip_address')
+    list_display = ('id', 'ip_address', 'note',)
+    search_fields = ('ip_address', 'note',)
 
 admin.site.register(AllowedIP, AllowedIPAdmin)
-
-
-
